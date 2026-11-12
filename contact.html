@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Fast Foods Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <span class="logo">Fast Foods</span>
+    <label for="menu-toggle" class="hamburger" aria-label="Toggle menu">&#9776;</label>
+    <input type="checkbox" id="menu-toggle">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero hero-small">
+    <div class="slide slide1"></div>
+    <div class="slide slide2"></div>
+    <div class="slide slide3"></div>
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+      <p>Orders, feedback or questions? We are listening</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="contact-grid">
+      <section>
+        <h2>Send a Message</h2>
+        <form id="contact-form">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option>General Inquiry</option>
+            <option>Place an Order</option>
+            <option>Feedback</option>
+            <option>Catering</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+
+          <button type="submit">Send</button>
+          <button type="reset">Reset</button>
+          <p id="form-message"></p>
+        </form>
+      </section>
+
+      <section>
+        <h2>Opening Hours</h2>
+        <p><span class="highlight">Mon - Sat:</span> 8:00 AM - 10:00 PM</p>
+        <p><span class="highlight">Sunday:</span> 10:00 AM - 8:00 PM</p>
+        <h3>Reach Us</h3>
+        <p>Email: <a href="mailto:info@fastfoods.com">info@fastfoods.com</a></p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Fast Foods Website. All rights reserved.</p>
+    <p>
+      <a href="https://facebook.com">Facebook</a> |
+      <a href="https://x.com">X (Twitter)</a> |
+      <a href="https://instagram.com">Instagram</a>
+    </p>
+  </footer>
+
+  <div class="mobile-bar">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const msg = document.getElementById('form-message');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      msg.textContent = 'Thank you, ' + form.name.value + '! Your message has been sent.';
+      form.reset();
+    });
+    form.addEventListener('reset', function () { msg.textContent = ''; });
+  </script>
+
+</body>
+</html>
